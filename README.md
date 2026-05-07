@@ -1,7 +1,6 @@
-# Gamtiles Digital Atelier
+# Balaji Enterprise - Construction & Home Luxury
 
-TODO: Document your project here
-Inline payment modempay ui:
+Modern B2B/B2C platform for construction materials, finishing interior solutions, and home luxury furniture in The Gambia.
 > ## Documentation Index
 > Fetch the complete documentation index at: https://docs.modempay.com/llms.txt
 > Use this file to discover all available pages before exploring further.

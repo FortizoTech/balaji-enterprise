@@ -94,94 +94,70 @@ export default function Navigation() {
                   <NavigationMenuContent>
                     <div className="w-[100vw] bg-background border-b shadow-xl">
                       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 p-12 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
-                        {/* PRODUCT DISCOVERY */}
+                        {/* STRUCTURAL */}
                         <div className="flex flex-col gap-6">
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">Product Discovery</h4>
+                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">Structural</h4>
                           <div className="flex flex-col gap-4">
                             <NavigationMenuLink asChild>
-                              <Link href="/collections" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=structural" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <Search className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Browse collection
+                                  <HardHat className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Building Materials
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Explore our curated tile selection.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Steel, cement, and roofing solutions.</p>
                               </Link>
                             </NavigationMenuLink>
                             <NavigationMenuLink asChild>
-                              <Link href="/inspiration" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=structural" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <PenTool className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Design inspiration
+                                  <Wrench className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Hardware Essentials
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">See real projects and creative ideas.</p>
-                              </Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink asChild>
-                              <Link href="/guide" className="group flex flex-col gap-1.5 focus:outline-none">
-                                <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <BookOpen className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Material guide
-                                </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Learn about finishes and durability.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Nails, tools, and construction gear.</p>
                               </Link>
                             </NavigationMenuLink>
                           </div>
                         </div>
 
-                        {/* FOR PROFESSIONALS */}
+                        {/* INTERIORS */}
                         <div className="flex flex-col gap-6">
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">For Professionals</h4>
+                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">Interiors</h4>
                           <div className="flex flex-col gap-4">
                             <NavigationMenuLink asChild>
-                              <Link href="/trade" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=interiors" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <HardHat className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Trade program
+                                  <PenTool className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Tiles & Paints
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Exclusive benefits for architects and designers.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Finishing solutions and BMA Paints.</p>
                               </Link>
                             </NavigationMenuLink>
                             <NavigationMenuLink asChild>
-                              <Link href="/samples" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=interiors" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <PackageSearch className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Sample ordering
+                                  <PackageSearch className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Electrical & Plumbing
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Order samples for your next project.</p>
-                              </Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink asChild>
-                              <Link href="/support" className="group flex flex-col gap-1.5 focus:outline-none">
-                                <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <Headset className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Project support
-                                </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Get expert advice for your build.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">High-quality fittings and sanitaryware.</p>
                               </Link>
                             </NavigationMenuLink>
                           </div>
                         </div>
 
-                        {/* RESOURCES */}
+                        {/* LIFESTYLE */}
                         <div className="flex flex-col gap-6">
-                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">Resources</h4>
+                          <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">Lifestyle</h4>
                           <div className="flex flex-col gap-4">
                             <NavigationMenuLink asChild>
-                              <Link href="/faq" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=lifestyle" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <HelpCircle className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> FAQs
+                                  <BookOpen className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Luxury Furniture
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Find answers to common questions.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Premium bedroom sets and mirrors.</p>
                               </Link>
                             </NavigationMenuLink>
                             <NavigationMenuLink asChild>
-                              <Link href="/care" className="group flex flex-col gap-1.5 focus:outline-none">
+                              <Link href="/collections?category=specialized" className="group flex flex-col gap-1.5 focus:outline-none">
                                 <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <Wrench className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Care & install
+                                  <Phone className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Specialized Gear
                                 </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Guides for maintenance and installation.</p>
-                              </Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink asChild>
-                              <Link href="/contact" className="group flex flex-col gap-1.5 focus:outline-none">
-                                <div className="flex items-center gap-2 font-medium text-foreground group-hover:text-gold transition-colors">
-                                  <Phone className="w-4 h-4 text-muted-foreground group-hover:text-gold" /> Contact
-                                </div>
-                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Reach our team for assistance.</p>
+                                <p className="text-xs text-muted-foreground font-body leading-relaxed">Electric bikes and sustainable transport.</p>
                               </Link>
                             </NavigationMenuLink>
                           </div>

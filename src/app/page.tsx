@@ -56,9 +56,9 @@ const Index = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-8 opacity-80">Balaji Enterprise Digital Atelier</p>
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-8 opacity-80">Balaji Enterprise</p>
             <h1 className="font-heading text-display md:text-[8rem] leading-[0.9] text-primary-foreground mb-12 tracking-tighter">
-              Bespoke<br />Surfaces
+              Construction &<br />Home Luxury
             </h1>
             <div className="flex flex-row justify-center gap-2 md:gap-6 mt-12 w-full md:w-auto px-4 md:px-0">
               <Link
@@ -90,9 +90,9 @@ const Index = () => {
                 </h2>
                 <div className="w-20 h-[1px] bg-gold mb-12" />
                 <p className="font-body text-body-lg text-muted-foreground leading-relaxed mb-8">
-                  Every tile in our collection is a convergence of natural beauty and engineered precision.
-                  We source the world's finest materials and transform them into surfaces that elevate
-                  architecture from structure to art.
+                  The Gambia's premier one-stop shop for construction and home improvement.
+                  We source the world's finest materials—from structural steel to luxury bedroom sets—to ensure
+                  your architectural vision is built on excellence.
                 </p>
                 <Link href="/about" className="font-body text-sm tracking-widest uppercase text-foreground border-b border-foreground pb-2 hover:text-gold hover:border-gold transition-colors inline-block w-max">
                   Our Journey
@@ -126,10 +126,10 @@ const Index = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
             {[
-              { title: 'Floor Tiles', slug: 'floor', img: interiorLiving },
-              { title: 'Wall Tiles', slug: 'wall', img: tileBlackSlate },
-              { title: 'Bathroom Surfaces', slug: 'bathroom', img: interiorBathroom },
-              { title: 'Spanish Collection', slug: 'spanish', img: tileConcrete },
+              { title: 'Structural Materials', slug: 'structural', img: '/assets/scraped/iron.png' },
+              { title: 'Finishing & Interiors', slug: 'interiors', img: '/assets/scraped/Tiles-Doors-Sanitary-Wears-300x214.png' },
+              { title: 'Home Luxury', slug: 'lifestyle', img: '/assets/scraped/about.png' },
+              { title: 'Sustainable Transport', slug: 'specialized', img: '/assets/scraped/Untitled-design-13.png' },
             ].map((cat, i) => (
               <ScrollReveal key={cat.slug} delay={i * 0.1}>
                 <Link href={`/collections?cat=${cat.slug}`} className="group relative block aspect-[3/4] overflow-hidden">

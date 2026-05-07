@@ -17,8 +17,8 @@ export interface Product {
 
 export const categories = [
   { id: 'all', name: 'All Collections' },
-  { id: 'floor', name: 'Floor Tiles' },
-  { id: 'wall', name: 'Wall Tiles' },
-  { id: 'bathroom', name: 'Bathroom & Light Tiles' },
-  { id: 'spanish', name: 'Spanish Tiles' }
+  { id: 'structural', name: 'Structural' },
+  { id: 'interiors', name: 'Interiors' },
+  { id: 'lifestyle', name: 'Lifestyle' },
+  { id: 'specialized', name: 'Specialized' }
 ];

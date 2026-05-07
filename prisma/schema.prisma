@@ -1,13 +1,11 @@
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
-// ─── Auth Models ───────────────────────────────────────────────
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
 model Account {
   id                String  @id @default(cuid())
@@ -15,15 +13,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -50,51 +47,43 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  role          String    @default("USER") // USER | ADMIN
+  role          String    @default("USER")
   password      String?
-  accounts      Account[]
-  sessions      Session[]
-  orders        Order[]
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
-
-  firstName String?
-  lastName  String?
+  firstName     String?
+  lastName      String?
+  accounts      Account[]
+  orders        Order[]
+  sessions      Session[]
 }
 
-// ─── Product Models ────────────────────────────────────────────
-
 model Product {
-  id           String   @id @default(cuid())
-  name         String
-  slug         String?  @unique
-  status       String   @default("DRAFT") // DRAFT | ACTIVE | ARCHIVED
-  price        Float
-  unit         String
-  collection   String
-  category     String
-  description  String
-  details      String[]
-  dimensions   String
-  material     String
-  finish       String
-  images       String[] // Legacy field kept for compatibility
-  techSpecs    Json
-  installation String[]
-
-  // SEO
+  id             String         @id @default(cuid())
+  name           String
+  slug           String?        @unique
+  status         String         @default("DRAFT")
+  price          Float
+  unit           String
+  collection     String
+  category       String
+  description    String
+  details        String[]
+  dimensions     String
+  material       String
+  finish         String
+  images         String[]
+  techSpecs      Json
+  installation   String[]
   seoTitle       String?
   seoDescription String?
-
-  // Relations
-  productImages ProductImage[]
-  variants      Variant[]
-  options       Option[]
-  orderItems    OrderItem[]
-
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  Inquiry   Inquiry[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  Inquiry        Inquiry[]
+  options        Option[]
+  orderItems     OrderItem[]
+  productImages  ProductImage[]
+  variants       Variant[]
 }
 
 model ProductImage {
@@ -109,7 +98,7 @@ model ProductImage {
 model Option {
   id        String        @id @default(cuid())
   productId String
-  name      String // e.g. "Size", "Finish", "Color"
+  name      String
   position  Int           @default(0)
   product   Product       @relation(fields: [productId], references: [id], onDelete: Cascade)
   values    OptionValue[]
@@ -118,26 +107,23 @@ model Option {
 model OptionValue {
   id       String @id @default(cuid())
   optionId String
-  value    String // e.g. "30x30", "Matte"
+  value    String
   option   Option @relation(fields: [optionId], references: [id], onDelete: Cascade)
 }
 
 model Variant {
   id        String  @id @default(cuid())
   productId String
-  title     String // e.g. "30x30 / Matte"
+  title     String
   sku       String?
   price     Float
-  options   Json // { "Dimension": "30x30", "Texture": "Matte" }
+  options   Json
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
-
-// ─── Order Models ──────────────────────────────────────────────
 
 model Order {
   id              String      @id @default(cuid())
   userId          String?
-  user            User?       @relation(fields: [userId], references: [id])
   customerEmail   String?
   customerName    String?
   customerPhone   String?
@@ -145,26 +131,25 @@ model Order {
   customerCity    String?
   customerRegion  String?
   total           Float
-  status          String      @default("PENDING") // PENDING, IN_REVIEW, APPROVED, PAYMENT_PENDING, PAID, CANCELLED
-  type            String      @default("ORDER_REQUEST") // ORDER_REQUEST, INQUIRY
-  items           OrderItem[]
+  status          String      @default("PENDING")
+  type            String      @default("ORDER_REQUEST")
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
+  user            User?       @relation(fields: [userId], references: [id])
+  items           OrderItem[]
 }
 
 model Payout {
   id          String   @id @default(cuid())
   amount      Float
-  status      String   @default("PENDING") // PENDING, COMPLETED, FAILED
+  status      String   @default("PENDING")
   reference   String   @unique
   bankDetails String?
   fees        Float    @default(0)
   netAmount   Float
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-
-  // The collection of orders that were included in this payout
-  orderIds String[]
+  orderIds    String[]
 }
 
 model OrderItem {
@@ -189,21 +174,19 @@ model Inquiry {
   customerName  String
   customerEmail String
   customerPhone String?
-  status        String   @default("PENDING") // PENDING, RESPONDED, CLOSED
+  status        String   @default("PENDING")
   isRead        Boolean  @default(false)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
   product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
 }
 
-// ─── Payment & Finance Models ───────────────────────────────────
-
 model WithdrawalRequest {
   id          String    @id @default(cuid())
   amount      Float
   destination String
   network     String    @default("wave")
-  status      String    @default("PENDING") // PENDING, APPROVED, REJECTED, COMPLETED
+  status      String    @default("PENDING")
   requestedAt DateTime  @default(now())
   processedAt DateTime?
 }

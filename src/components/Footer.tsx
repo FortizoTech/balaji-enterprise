@@ -40,15 +40,15 @@ export default function Footer() {
           <div>
             <h4 className="font-body text-xs tracking-widest uppercase mb-6 text-primary-foreground/40">Contact</h4>
             <div className="space-y-4 font-body text-sm text-primary-foreground/60">
-              <p>sahoebrahema1@gmail.com</p>
-              <p>+220 2793008</p>
-              <p>Bijilo, The Gambia</p>
+              <p>JBGAMBIA@gmail.com</p>
+              <p>+220 200 0026 / 200 0133</p>
+              <p>Jimpex Road, Kanifing Industrial Estate, The Gambia</p>
             </div>
           </div>
         </div>
         <div className="border-t border-primary-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body text-xs text-primary-foreground/30">© 2026 Balaji Enterprise. All rights reserved.</p>
-          <p className="font-body text-xs text-primary-foreground/30">Artisanal Surfaces & Digital Atelier.</p>
+          <p className="font-body text-xs text-primary-foreground/30">One-Stop Shop for Construction & Home Improvement.</p>
         </div>
       </div>
     </footer>

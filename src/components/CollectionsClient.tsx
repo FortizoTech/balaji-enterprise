@@ -81,14 +81,19 @@ interface Product {
 function CollectionsClientContent({ initialProducts, categories }: { initialProducts: Product[], categories: any[] }) {
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get('q') || '';
-    const [activeCategory, setActiveCategory] = useState('all');
+    const initialCategory = searchParams.get('category') || 'all';
+    const [activeCategory, setActiveCategory] = useState(initialCategory);
     const [searchQuery, setSearchQuery] = useState(initialQuery);
 
     useEffect(() => {
         if (initialQuery) {
             setSearchQuery(initialQuery);
         }
-    }, [initialQuery]);
+        const cat = searchParams.get('category');
+        if (cat) {
+            setActiveCategory(cat);
+        }
+    }, [initialQuery, searchParams]);
 
     const filtered = initialProducts.filter((p) => {
         const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
