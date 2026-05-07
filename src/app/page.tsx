@@ -101,11 +101,11 @@ const Index = () => {
             </div>
             <div className="lg:col-span-7">
               <ScrollReveal delay={0.2}>
-                <div className="relative aspect-[3/4] md:aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[3/4] md:aspect-[4/5] overflow-hidden">
                   <img
                     src={interiorKitchen}
                     alt="Luxury kitchen"
-                    className="w-full h-full object-cover scale-110"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
                 </div>
