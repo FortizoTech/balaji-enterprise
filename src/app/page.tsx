@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import { getProducts } from '@/app/actions/admin';
-const heroImage = '/assets/hero-tiles.jpg';
-const interiorBathroom = '/assets/interior-bathroom.jpg';
-const interiorKitchen = '/assets/interior-kitchen.jpg';
-const interiorLiving = '/assets/interior-living.jpg';
-const tileMarbleWhite = '/assets/tile-marble-white.jpg';
-const tileBlackSlate = '/assets/tile-black-slate.jpg';
-const tileConcrete = '/assets/tile-concrete.jpg';
+const heroImage = '/assets/scraped/about.png';
+const interiorBathroom = '/assets/scraped/Tiles-Doors-Sanitary-Wears-300x214.png';
+const interiorKitchen = '/assets/scraped/fast.png';
+const interiorLiving = '/assets/scraped/img-3.png';
+const tileMarbleWhite = '/assets/scraped/white-cement.png';
+const tileBlackSlate = '/assets/scraped/iron.png';
+const tileConcrete = '/assets/scraped/various-Corrugates-Roofing-Tiles.png';
 
 import ConsultPopover from '@/components/ConsultPopover';
 
@@ -31,9 +31,9 @@ const Index = () => {
   }, []);
 
   const fallbackFeatured = [
-    { img: tileMarbleWhite, title: 'Calacatta Oro', sub: 'Marble Series', id: 'calacatta-oro' },
-    { img: tileBlackSlate, title: 'Noir Ardoise', sub: 'Stone Series', id: 'noir-ardoise' },
-    { img: tileConcrete, title: 'Urban Concrete', sub: 'Industrial Series', id: 'urban-concrete' },
+    { img: '/assets/scraped/iron.png', title: 'Cement Reinforcement Rebar', sub: 'Structural', id: 'structural-steel-rod' },
+    { img: '/assets/scraped/white-cement.png', title: 'Premium White Cement', sub: 'Structural', id: 'cement-white-premium' },
+    { img: '/assets/scraped/Roofing-Tiles.png', title: 'Stone Coated Roof Tiles', sub: 'Structural', id: 'roofing-tiles-stone-coated' },
   ];
 
   const displayProducts = featuredProducts.length > 0 ? featuredProducts : fallbackFeatured;

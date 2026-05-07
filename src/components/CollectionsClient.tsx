@@ -111,7 +111,7 @@ function CollectionsClientContent({ initialProducts, categories }: { initialProd
                     <ScrollReveal>
                         <p className="font-body text-xs tracking-widest uppercase text-muted-foreground mb-4">Collections</p>
                         <h1 className="font-heading text-display text-foreground mb-12">
-                            Surfaces of Distinction
+                            Construction &<br />Home Luxury
                         </h1>
                     </ScrollReveal>
 
