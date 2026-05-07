@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ScrollReveal from '@/components/ScrollReveal';
 import { getProducts } from '@/app/actions/admin';
-const heroImage = '/assets/scraped/Untitled-design-16-1.png';
-const interiorBathroom = '/assets/scraped/Tiles-Doors-Sanitary-Wears-300x214.png';
-const interiorKitchen = '/assets/scraped/about.png';
-const interiorLiving = '/assets/scraped/img-3.png';
-const tileMarbleWhite = '/assets/scraped/white-cement.png';
-const tileBlackSlate = '/assets/scraped/iron.png';
-const tileConcrete = '/assets/scraped/various-Corrugates-Roofing-Tiles.png';
+// High-res images from jbalaji.com gallery
+const heroImage = '/assets/gallery/gallery-08.png';          // Roofing Tiles - large, crisp
+const interiorBathroom = '/assets/gallery/gallery-10.png';   // Hardware & Plumbing showroom
+const interiorKitchen = '/assets/scraped/about.png';         // Full-size storefront/building
+const interiorLiving = '/assets/gallery/gallery-11.png';     // Untitled-design-13 (lifestyle)
+const tileMarbleWhite = '/assets/gallery/gallery-05.png';    // White Cement
+const tileBlackSlate = '/assets/gallery/gallery-16.png';     // Iron/Rebar
+const tileConcrete = '/assets/gallery/gallery-09.png';       // Corrugated Roofing
 
 import ConsultPopover from '@/components/ConsultPopover';
 
@@ -126,10 +127,10 @@ const Index = () => {
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
             {[
-              { title: 'Structural Materials', slug: 'structural', img: '/assets/scraped/iron.png' },
-              { title: 'Finishing & Interiors', slug: 'interiors', img: '/assets/scraped/Tiles-Doors-Sanitary-Wears-300x214.png' },
+              { title: 'Structural Materials', slug: 'structural', img: '/assets/gallery/gallery-08.png' },
+              { title: 'Finishing & Interiors', slug: 'interiors', img: '/assets/gallery/gallery-10.png' },
               { title: 'Home Luxury', slug: 'lifestyle', img: '/assets/scraped/about.png' },
-              { title: 'Sustainable Transport', slug: 'specialized', img: '/assets/scraped/Untitled-design-13.png' },
+              { title: 'Sustainable Transport', slug: 'specialized', img: '/assets/gallery/gallery-11.png' },
             ].map((cat, i) => (
               <ScrollReveal key={cat.slug} delay={i * 0.1}>
                 <Link href={`/collections?cat=${cat.slug}`} className="group relative block aspect-[3/4] overflow-hidden">
