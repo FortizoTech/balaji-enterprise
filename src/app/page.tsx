@@ -57,7 +57,7 @@ const Index = () => {
             transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-8 opacity-80">Balaji Enterprise</p>
-            <h1 className="font-heading text-display md:text-[8rem] leading-[0.9] text-primary-foreground mb-12 tracking-tighter">
+            <h1 className="font-heading text-display leading-[0.9] text-primary-foreground mb-12 tracking-tighter">
               Construction &<br />Home Luxury
             </h1>
             <div className="flex flex-row justify-center gap-2 md:gap-6 mt-12 w-full md:w-auto px-4 md:px-0">
