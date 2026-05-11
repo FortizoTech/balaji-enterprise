@@ -9,7 +9,7 @@ export default withAuth(
         console.log(`[AUTH MIDDLEWARE] Path: ${pathname} | User: ${token?.email || 'No Token'} | Role: ${token?.role || 'No Role'}`);
 
         // We allow the login page itself (though withAuth usually handles this if configured)
-        if (pathname === '/admin/login') {
+        if (pathname === '/auth/login') {
             return NextResponse.next();
         }
 
@@ -28,7 +28,7 @@ export default withAuth(
             authorized: ({ token }) => !!token,
         },
         pages: {
-            signIn: "/admin/login",
+            signIn: "/auth/login",
         },
     }
 );

@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense, useState, useEffect } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, getSession, useSession } from "next-auth/react";
 import { motion } from "framer-motion";
 import { ShieldCheck, X, Loader2 } from "lucide-react";
 import Link from "next/link";
@@ -22,7 +22,20 @@ function LoginContent() {
         if (searchParams.get("registered")) {
             setSuccess("Account created successfully. Please sign in.");
         }
-    }, [searchParams]);
+
+        // Handle the case where user is already logged in but visits /auth/login
+        const checkSession = async () => {
+            const session = await getSession();
+            if (session) {
+                if ((session.user as any)?.role === "ADMIN") {
+                    router.push("/admin");
+                } else {
+                    router.push(callbackUrl);
+                }
+            }
+        };
+        checkSession();
+    }, [searchParams, router, callbackUrl]);
 
     const handleManualLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -39,7 +52,12 @@ function LoginContent() {
             if (result?.error) {
                 setError("Invalid email or password. Please try again.");
             } else {
-                router.push(callbackUrl);
+                const session = await getSession();
+                if ((session?.user as any)?.role === "ADMIN") {
+                    router.push("/admin");
+                } else {
+                    router.push(callbackUrl);
+                }
                 router.refresh();
             }
         } catch (err) {

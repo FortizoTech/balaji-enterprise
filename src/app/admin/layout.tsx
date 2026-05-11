@@ -13,17 +13,6 @@ export default function AdminLayout({
     const pathname = usePathname();
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    // Isolate login page from the admin dashboard shell
-    const isLoginPage = pathname === '/admin/login';
-
-    if (isLoginPage) {
-        return (
-            <div className="min-h-screen bg-[#FBFBFA]">
-                {children}
-            </div>
-        );
-    }
-
     return (
         <div className="min-h-screen bg-[#FAFAFA]">
             <AdminSidebar open={sidebarOpen} setOpen={setSidebarOpen} />
