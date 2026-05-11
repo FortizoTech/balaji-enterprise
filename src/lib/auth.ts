@@ -28,10 +28,9 @@ export const authOptions: NextAuthOptions = {
                         email: true,
                         name: true,
                         role: true,
-                        // @ts-ignore - Local Prisma client is stale; 'password' exists in DB and will be generated on Vercel
                         password: true,
                     }
-                }) as any;
+                });
 
                 if (!user || !user.password) return null;
 
