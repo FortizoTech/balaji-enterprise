@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
@@ -184,6 +185,26 @@ const products = [
 
 async function main() {
     console.log('--- Starting Seeding Process (Balaji Enterprise) ---');
+
+    // Create Admin User
+    const adminEmail = 'admin@jbalaji.com';
+    const adminPassword = 'BalajiAdmin2024!';
+    const hashedPassword = await bcrypt.hash(adminPassword, 10);
+
+    console.log(`Upserting admin user: ${adminEmail}`);
+    await prisma.user.upsert({
+        where: { email: adminEmail },
+        update: {
+            role: 'ADMIN',
+            password: hashedPassword,
+        },
+        create: {
+            email: adminEmail,
+            role: 'ADMIN',
+            password: hashedPassword,
+            name: 'Balaji Admin',
+        },
+    });
 
     for (const product of products) {
         console.log(`Upserting product: ${product.name} (${product.id})`);
