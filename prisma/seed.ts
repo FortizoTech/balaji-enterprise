@@ -17,7 +17,7 @@ const products = [
         dimensions: '12mm - 32mm diameters',
         material: 'High-Tensile Steel',
         finish: 'Ribbed',
-        images: ['/assets/scraped/iron.png'],
+        images: ['/assets/gallery/gallery-16.png'],
         techSpecs: { tensileStrength: '500 MPa', standard: 'BS 4449' },
         installation: ['Cutting and bending as per structural drawing', 'Fixing with binding wire']
     },
@@ -34,7 +34,7 @@ const products = [
         dimensions: '50kg Bag',
         material: 'Portland Cement',
         finish: 'Smooth White',
-        images: ['/assets/scraped/white-cement.png', '/assets/scraped/cement.png'],
+        images: ['/assets/gallery/gallery-05.png', '/assets/gallery/gallery-17.png'],
         techSpecs: { whitenessValue: '90%', settingTime: '45 mins' },
         installation: ['Mix with water and fine aggregates', 'Apply as per surface requirement']
     },
@@ -51,7 +51,7 @@ const products = [
         dimensions: '1335mm x 410mm',
         material: 'Alu-Zinc Steel with Stone Coating',
         finish: 'Stone Textured',
-        images: ['/assets/scraped/Roofing-Tiles.png', '/assets/scraped/Various-Corrugates-Roofing-Tiles.png'],
+        images: ['/assets/gallery/gallery-08.png', '/assets/gallery/gallery-09.png'],
         techSpecs: { weight: '6.4kg/sqm', durability: '50+ years' },
         installation: ['Interlocking installation', 'Fixed with specialized roofing screws']
     },
@@ -68,7 +68,7 @@ const products = [
         dimensions: '2" - 6" variants',
         material: 'Galvanized Iron',
         finish: 'Metallic',
-        images: ['/assets/scraped/nails.png'],
+        images: ['/assets/gallery/gallery-14.png'],
         techSpecs: { coating: 'Zinc Galvanized' },
         installation: ['Manual hammering', 'Pneumatic nailer compatible']
     },
@@ -104,7 +104,7 @@ const products = [
         dimensions: '300 x 300 mm',
         material: 'Ceramic',
         finish: 'Matte',
-        images: ['/assets/scraped/Tiles-Doors-Sanitary-Wears-300x214.png'],
+        images: ['/assets/gallery/gallery-02.png'],
         techSpecs: { waterAbsorption: '<0.5%' },
         installation: ['Standard tile adhesive', '2mm grout line recommended']
     },
@@ -121,7 +121,7 @@ const products = [
         dimensions: '18L Bucket',
         material: 'Acrylic Emulsion',
         finish: 'Satin',
-        images: ['/assets/scraped/PaintWhitewash-White-Cement-2-300x214.png'],
+        images: ['/assets/gallery/gallery-07.png'],
         techSpecs: { coverage: '10-12 sqm/L', dryingTime: '4 hours' },
         installation: ['Stir well', 'Apply two coats on primed surface']
     },
@@ -138,7 +138,7 @@ const products = [
         dimensions: 'Standard fit',
         material: 'Brass',
         finish: 'Chrome',
-        images: ['/assets/scraped/HardwarePlumbing.png'],
+        images: ['/assets/gallery/gallery-10.png'],
         techSpecs: { flowRate: '15L/min' },
         installation: ['Standard 15mm connection']
     },
@@ -157,7 +157,7 @@ const products = [
         dimensions: 'Bed: 200x200cm, Wardrobe: 240x220cm',
         material: 'Engineered Wood / Velvet Fabric',
         finish: 'Polished Veneer',
-        images: ['/assets/scraped/about.png'],
+        images: ['/assets/gallery/gallery-01.png'],
         techSpecs: { warranty: '5 years' },
         installation: ['Professional assembly included']
     },
@@ -176,7 +176,7 @@ const products = [
         dimensions: '1100 x 500 x 1150 mm',
         material: 'Aerospace Grade Aluminum',
         finish: 'Matte Grey',
-        images: ['/assets/scraped/Untitled-design-13.png'],
+        images: ['/assets/gallery/gallery-11.png'],
         techSpecs: { maxSpeed: '25 km/h', battery: '36V 10Ah' },
         installation: ['Ready to ride', 'Initial charge required']
     }

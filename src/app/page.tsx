@@ -32,9 +32,9 @@ const Index = () => {
   }, []);
 
   const fallbackFeatured = [
-    { img: '/assets/scraped/iron.png', title: 'Cement Reinforcement Rebar', sub: 'Structural', id: 'structural-steel-rod' },
-    { img: '/assets/scraped/white-cement.png', title: 'Premium White Cement', sub: 'Structural', id: 'cement-white-premium' },
-    { img: '/assets/scraped/Roofing-Tiles.png', title: 'Stone Coated Roof Tiles', sub: 'Structural', id: 'roofing-tiles-stone-coated' },
+    { img: '/assets/gallery/gallery-16.png', title: 'Cement Reinforcement Rebar', sub: 'Structural', id: 'structural-steel-rod' },
+    { img: '/assets/gallery/gallery-05.png', title: 'Premium White Cement', sub: 'Structural', id: 'cement-white-premium' },
+    { img: '/assets/gallery/gallery-08.png', title: 'Stone Coated Roof Tiles', sub: 'Structural', id: 'roofing-tiles-stone-coated' },
   ];
 
   const displayProducts = featuredProducts.length > 0 ? featuredProducts : fallbackFeatured;
